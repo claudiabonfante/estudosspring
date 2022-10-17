@@ -1,23 +1,22 @@
-package br.com.claudia.forum.controller.form;
+package br.com.claudia.forum.form;
 
 import br.com.claudia.forum.modelo.Curso;
 import br.com.claudia.forum.modelo.Topico;
 import br.com.claudia.forum.repository.CursoRepository;
-import br.com.claudia.forum.repository.TopicoRepository;
 import com.sun.istack.NotNull;
-import net.bytebuddy.implementation.bind.annotation.Empty;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;
 
-public class CadastrarTopicoDto {
+public class CadastrarTopicoForm {
 
     @NotNull @NotEmpty @Length(min = 5)
     private String titulo;
-    @NotNull @NotEmpty
+    @NotNull @NotEmpty @Length(min = 10)
     private String mensagem;
     @NotNull @NotEmpty
     private String nomeCurso;
+
 
 
     public String getTitulo() {
